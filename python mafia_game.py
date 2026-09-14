@@ -6,7 +6,7 @@ def mafia_game():
     print("       WELCOME TO MAFIA/WEREWOLF GAME")
     print("=" * 50)
 
-    # Step 1: Get number of players
+   
     while True:
         try:
             num_players = int(input("Enter number of players (minimum 6): "))
@@ -17,20 +17,19 @@ def mafia_game():
         except ValueError:
             print("Please enter a valid number!")
 
-    # Step 2: Build the role list
     roles = ['Doctor', 'Mafia', 'Mafia', 'Investigator', 'Citizen', 'Citizen']
 
-    # Add extra Mafia for larger games (1 extra Mafia per 4 extra players)
+   
     extra_mafia = (num_players - 6) // 4
     for _ in range(extra_mafia):
         roles.append('Mafia')
 
-    # Fill the rest with Citizens
+   
     remaining_citizens = num_players - len(roles)
     for _ in range(remaining_citizens):
         roles.append('Citizen')
 
-    # Step 3: Get player names
+    
     players = []
     print(f"\nEnter {num_players} player names:")
     for i in range(num_players):
@@ -40,14 +39,14 @@ def mafia_game():
             name = input(f"Player {i + 1} name: ").strip()
         players.append(name)
 
-    # Step 4: Shuffle and assign roles
+    
     random.shuffle(roles)
 
     player_roles = {}
     for i in range(num_players):
         player_roles[players[i]] = roles[i]
 
-    # Step 5: Show assignments
+    
     print("\n" + "=" * 50)
     print("       GAME ROLES ASSIGNED!")
     print("=" * 50)
@@ -55,7 +54,7 @@ def mafia_game():
     for player, role in player_roles.items():
         print(f"{player}: {role}")
 
-    # Step 6: Role summary
+   
     print("\n" + "=" * 50)
     print("       ROLE SUMMARY:")
     print("=" * 50)
