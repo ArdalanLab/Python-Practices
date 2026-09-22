@@ -3,7 +3,7 @@ import random
 
 def mafia_game():
     print("=" * 50)
-    print("       WELCOME TO MAFIA/WEREWOLF GAME")
+    print("WELCOME TO MAFIA/WEREWOLF GAME")
     print("=" * 50)
 
    
